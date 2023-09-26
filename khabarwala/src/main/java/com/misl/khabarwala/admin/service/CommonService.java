@@ -8,8 +8,8 @@ import java.util.Optional;
 public interface CommonService <ENTITY, ID>{
 
     List<ENTITY> findAll();
-    Optional<EmployeeEntity> findById(ID id);
-    void updateEntity(ENTITY entity);
+    Optional<ENTITY> findById(ID id);
+    void updateEntity(ENTITY entity, ID id);
     void deleteEntity(ID id);
     ENTITY saveEntity(ENTITY entity);
 
