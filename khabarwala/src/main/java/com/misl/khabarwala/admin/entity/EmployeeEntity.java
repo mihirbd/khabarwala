@@ -1,9 +1,6 @@
 package com.misl.khabarwala.admin.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
@@ -19,8 +16,10 @@ public class EmployeeEntity {
     private String firstName;
     private String lastName;
     private String Phone;
+    @Column(nullable = true, unique = true)
     private String email;
     private String address;
+    @Column(unique = true)
     private String nid;
     private Blob image;
 
