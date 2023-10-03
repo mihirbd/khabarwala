@@ -3,12 +3,14 @@ package com.misl.khabarwala.admin.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.experimental.Accessors;
+import org.hibernate.envers.Audited;
 
 import java.sql.Blob;
 
 @Entity
 @Data
 @Accessors(chain = true)
+@Audited
 public class EmployeeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

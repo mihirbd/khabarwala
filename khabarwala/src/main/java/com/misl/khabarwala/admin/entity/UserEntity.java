@@ -3,6 +3,7 @@ package com.misl.khabarwala.admin.entity;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.Accessors;
+import org.hibernate.envers.Audited;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -13,6 +14,7 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
+@Audited
 public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
