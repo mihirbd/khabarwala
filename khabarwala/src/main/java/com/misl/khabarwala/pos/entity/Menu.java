@@ -1,6 +1,6 @@
 package com.misl.khabarwala.pos.entity;
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,10 +13,14 @@ import java.util.Date;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Menu {
+public class Menu extends BaseEntity {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private Date date;
+    @ManyToOne
     FoodItem foodItem;
     private Double pricePerUnit;
 
