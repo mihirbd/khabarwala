@@ -6,16 +6,18 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Date;
+
 @Entity
-@Setter
 @Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class RawGoods extends BaseEntity {
+public class Menu {
 
-    private String name;
-    private String code;
-    private Double stock;
-    private String unit;
+    private Long id;
+    private Date date;
+    FoodItem foodItem;
+    private Double pricePerUnit;
 
 }

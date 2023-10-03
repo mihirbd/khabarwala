@@ -7,15 +7,12 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Setter
 @Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class RawGoods extends BaseEntity {
+public class Category {
 
+    private Long id;
     private String name;
-    private String code;
-    private Double stock;
-    private String unit;
-
 }
