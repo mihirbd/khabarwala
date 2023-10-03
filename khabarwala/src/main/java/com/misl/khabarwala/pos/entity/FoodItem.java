@@ -17,4 +17,5 @@ public class FoodItem extends BaseEntity{
     private String code;
     private Double stock;
     private String unit;
+    Category category;
 }

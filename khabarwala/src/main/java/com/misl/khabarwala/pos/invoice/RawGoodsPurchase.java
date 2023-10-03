@@ -20,6 +20,7 @@ public class RawGoodsPurchase {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String code;
     private Date purchaseDate;
     private Date expiryDate;
     private Double quantity;
