@@ -1,4 +1,4 @@
-package com.misl.khabarwala.pos.invoice;
+package com.misl.khabarwala.pos.entity.invoice;
 
 
 import jakarta.persistence.Entity;
@@ -15,7 +15,7 @@ import java.util.Date;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ReadyFoodPurchase {
+public class FinishFoodsPurchaseInvoice {
 
     @Id
     private Long id;

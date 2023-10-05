@@ -1,7 +1,5 @@
 package com.misl.khabarwala.admin.service;
 
-import com.misl.khabarwala.admin.entity.EmployeeEntity;
-
 import java.util.List;
 import java.util.Optional;
 

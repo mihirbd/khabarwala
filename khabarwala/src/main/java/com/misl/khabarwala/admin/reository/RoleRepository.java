@@ -1,6 +1,5 @@
 package com.misl.khabarwala.admin.reository;
 
-import com.misl.khabarwala.admin.entity.EmployeeEntity;
 import com.misl.khabarwala.admin.entity.RoleEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.history.RevisionRepository;

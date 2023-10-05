@@ -5,6 +5,7 @@ import com.misl.khabarwala.admin.entity.RoleEntity;
 import com.misl.khabarwala.admin.mapper.RoleMapper;
 import com.misl.khabarwala.admin.reository.RoleRepository;
 import com.misl.khabarwala.admin.service.RoleService;
+import com.misl.khabarwala.configuration.exception.IdNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,13 +31,13 @@ public class RoleServiceImpl implements RoleService {
 
     @Override
     public Optional<Role> findById(Long id) {
-       RoleEntity role = roleRepository.findById(id).orElseThrow(RuntimeException::new);
+        RoleEntity role = roleRepository.findById(id).orElseThrow(()-> new IdNotFoundException("Role id not found!"));
         return Optional.of(roleMapper.entityToDto(role));
     }
 
     @Override
     public void updateEntity(Role role, Long id) {
-        RoleEntity fetchRole = roleRepository.findById(id).orElseThrow(RuntimeException::new);
+        RoleEntity fetchRole = roleRepository.findById(id).orElseThrow(()-> new IdNotFoundException("Role id not found!"));
         fetchRole.setRole(role.getRole());
         roleRepository.save(fetchRole);
     }

@@ -6,6 +6,7 @@ import com.misl.khabarwala.admin.mapper.UserMapper;
 import com.misl.khabarwala.admin.reository.EmployeeRepository;
 import com.misl.khabarwala.admin.reository.UserRepository;
 import com.misl.khabarwala.admin.service.UserService;
+import com.misl.khabarwala.configuration.exception.IdNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -34,14 +35,14 @@ public class UserServiceImp implements UserService {
 
     @Override
     public Optional<User> findById(Long id) {
-        UserEntity user = userRepository.findById(id).orElseThrow(()-> new RuntimeException("Id not found!"));
+        UserEntity user = userRepository.findById(id).orElseThrow(()-> new IdNotFoundException("User id not found!"));
         return Optional.of(userMapper.toDto(user));
     }
 
     @Override
     public void updateEntity(User user, Long id) {
 
-        UserEntity userEntity = userRepository.findById(id).orElseThrow( ()-> new RuntimeException("User not found."));
+        UserEntity userEntity = userRepository.findById(id).orElseThrow(()-> new IdNotFoundException("User id not found!"));
         userEntity.setUserName(user.getUserName())
         	.setPassword(user.getPassword())
         	.setEmployee(user.getEmployee());
