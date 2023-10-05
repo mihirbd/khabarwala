@@ -5,6 +5,7 @@ import com.misl.khabarwala.admin.entity.EmployeeEntity;
 import com.misl.khabarwala.admin.mapper.EmployeeMapper;
 import com.misl.khabarwala.admin.reository.EmployeeRepository;
 import com.misl.khabarwala.admin.service.EmployeeService;
+import com.misl.khabarwala.configuration.exception.IdNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,13 +31,13 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public Optional<Employee> findById(Long id) {
-       EmployeeEntity employee = employeeRepository.findById(id).orElseThrow(RuntimeException::new);
+       EmployeeEntity employee = employeeRepository.findById(id).orElseThrow(()-> new IdNotFoundException("Employee id not found!"));
         return Optional.of(employeeMapper.entityToDto(employee));
     }
 
     @Override
     public void updateEntity(Employee employee, Long id) {
-        EmployeeEntity fetchEmployee = employeeRepository.findById(id).orElseThrow(RuntimeException::new);
+        EmployeeEntity fetchEmployee = employeeRepository.findById(id).orElseThrow(()-> new IdNotFoundException("Employee id not found!"));
         fetchEmployee.setFirstName(employee.getFirstName())
         	.setLastName(employee.getLastName())
         	.setPhone(employee.getPhone())

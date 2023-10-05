@@ -14,10 +14,8 @@ public class RoleMapper {
     @Autowired
     ModelMapper modelMapper;
 
-    // Entity to DTO mapping for Employee
     public Role entityToDto(RoleEntity roleEntity) { return modelMapper.map(roleEntity, Role.class); }
 
-    // DTO to Entity mapping for Employee
     public RoleEntity dtoToEntity(Role role) {
         return modelMapper.map(role, RoleEntity.class);
     }

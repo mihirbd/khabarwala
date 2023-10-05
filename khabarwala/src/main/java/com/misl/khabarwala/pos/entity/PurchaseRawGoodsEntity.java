@@ -1,30 +1,33 @@
-package com.misl.khabarwala.pos.invoice;
+package com.misl.khabarwala.pos.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.experimental.Accessors;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 @Entity
-@Getter
-@Setter
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class FoodItemSell {
+@Accessors(chain = true)
+public class PurchaseRawGoodsEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String name;
     private String code;
-    private Date sellDate;
-    private Double quantity;
+    private Double stock;
     private String unit;
     private Double price;
-
+    private BigDecimal totalPrice;
+    private Date purchaseDate;
+    private Date expiryDate;
 }
