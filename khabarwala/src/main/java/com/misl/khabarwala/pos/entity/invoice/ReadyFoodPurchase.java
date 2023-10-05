@@ -1,4 +1,5 @@
-package com.misl.khabarwala.pos.invoice;
+package com.misl.khabarwala.pos.entity.invoice;
+
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,19 +13,19 @@ import lombok.Setter;
 import java.util.Date;
 
 @Entity
-@Getter
 @Setter
+@Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class FoodItemSell {
+public class ReadyFoodPurchase {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String code;
-    private Date sellDate;
+    private Date purchaseDate;
+    private Date expiryDate;
     private Double quantity;
     private String unit;
-    private Double price;
 
 }

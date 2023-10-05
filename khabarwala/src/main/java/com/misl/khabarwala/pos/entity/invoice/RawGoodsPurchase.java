@@ -1,4 +1,4 @@
-package com.misl.khabarwala.pos.invoice;
+package com.misl.khabarwala.pos.entity.invoice;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
